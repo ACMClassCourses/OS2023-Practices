@@ -5,8 +5,8 @@
 // 2 Locs here: declare mutex and barrier
 void *thread1(void* dummy){
     int i;
-    // 1 Loc: mutex operation
-    // 1 Loc: barrier operation
+    // 2 Locs: mutex operation and barrier operation
+    // please consider the order of mutex operation and barrier operation
     printf("This is thread 1!\n");
     for(i = 0; i < 20; ++i){
         printf("H");
@@ -27,8 +27,8 @@ void *thread1(void* dummy){
 
 void *thread2(void* dummy){
     int i;
-    // 1 Loc: mutex operation
-    // 1 Loc: barrier operation
+    // 2 Locs: mutex operation and barrier operation
+    // please consider the order of mutex operation and barrier operation
     printf("This is thread 2!\n");
     for(i = 0; i < 20; ++i){
         printf("A");
@@ -44,9 +44,8 @@ void *thread2(void* dummy){
 int main(){
     pthread_t pid[2];
     int i;
-    // 1 Loc: barrier initialization
-    // 3 Locs here: create 2 thread using thread1 and thread2 as function.
-    // mutex initialization
+    // 2 Locs: barrier initialization and mutex initialization
+    // 2 Locs here: create 2 thread using thread1 and thread2 as function.
     // 1 Loc: barrier operation
     for(i = 0; i < 2; ++i){
         // 1 Loc code here: join thread
