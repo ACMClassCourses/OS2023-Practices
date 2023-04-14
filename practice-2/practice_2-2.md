@@ -151,7 +151,7 @@ else {
 
 ## 9. Hints
 
-- *使用调试器*，帮助你定位内存越界访问。当使用调试器时记得在 Makefile 中设定 -g 标记而非 -O2
+- *使用调试器*，帮助你定位内存越界访问。当使用调试器时记得在 Makefile 中设定 `-g` 标记而非 `-O2`
 - *使用 profiler*，例如 `gprof` 工具会有助于优化性能
 - *尽早动工！* 
 
@@ -164,7 +164,7 @@ else {
 - Algorithms to scan free blocks:
   - First fit/next fit
   - Blocks sorted by address with first fit
-  - Best fit  
+  - Best fit
 
 In general, we suggest that you start with an implicit free list, then change this to an explicit list, and then
 use the explicit list as the basis for a final version based on segregated lists.

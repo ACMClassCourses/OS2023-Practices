@@ -10,5 +10,4 @@ Progresses:
 
   - 2-1. Buddy System
 
-
   - 2-2. Malloc
