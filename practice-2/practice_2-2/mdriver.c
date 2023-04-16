@@ -30,6 +30,9 @@
  * Constants and macros
  **********************/
 
+/* OJ */
+// #define OJ
+
 /* Misc */
 #define MAXLINE     1024 /* max string size */
 #define HDRLINES       4 /* number of header lines in a trace file */
@@ -271,6 +274,10 @@ int main(int argc, char **argv)
 	/*
 	 * Read and interpret the command line arguments
 	 */
+#ifdef OJ
+		num_tracefiles = 1;
+		trace_from_stdin = 1;
+#else
 	while ((c = getopt(argc, argv, "d:f:c:s:t:v:hVAlDj")) != EOF) {
 		switch (c) {
 
@@ -343,6 +350,7 @@ int main(int argc, char **argv)
 				exit(1);
 		}
 	}
+#endif
 
 	if (trace_from_stdin) {
 		printf("Using stdin as tracefile\n");
