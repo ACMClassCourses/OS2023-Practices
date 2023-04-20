@@ -128,7 +128,7 @@ int main() {
             dotOk(query_page_counts(1) == freeCnt);
         }
         q = p + 1024 * 4;
-        for (pgIdx = 0; pgIdx < MAXRANK0PAGE; pgIdx += 2, q = q + 1024 * 4) {
+        for (pgIdx = 0; pgIdx < MAXRANK0PAGE; pgIdx += 2, q = q + 1024 * 4 * 2) {
             ret = return_pages(q);
             freeCnt -= 1;
             dotOk(query_page_counts(1) == freeCnt);
